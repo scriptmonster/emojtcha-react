@@ -30,10 +30,7 @@ export const takeFor = (emojiList: Emoji[], n: number): Emoji[] =>
     [],
   )
 
-export const takeRandom = (emojiList: Emoji[]): Emoji => {
-  console.log(emojiList, shuffled(emojiList))
-  return shuffled(emojiList)[0]
-}
+export const takeRandom = (emojiList: Emoji[]): Emoji => shuffled(emojiList)[0]
 
 export const shuffledCopy = (emojiList: Emoji[]): Emoji[] =>
   compose(shuffled, copy)(emojiList)
