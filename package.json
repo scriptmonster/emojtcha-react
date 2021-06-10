@@ -1,6 +1,6 @@
 {
   "name": "emojicha",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "CAPTCHA made with Emoji",
   "main": "index.ts",
   "author": "Pakanon Pantisawat <pakanon.pantisawat@gmail.com>",
@@ -12,7 +12,8 @@
     "run:examples": "cd examples && yarn dev",
     "install:examples": "cd examples && yarn",
     "install:all": "yarn && yarn install:examples",
-    "start": "npm-run-all --parallel run:watch run:examples"
+    "start": "npm-run-all --parallel run:watch run:examples",
+    "dope": "node scripts/build.js"
   },
   "dependencies": {
     "jest": "^27.0.4",
@@ -37,11 +38,13 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "fs-extra": "^10.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.1",
     "rollup": "^2.51.1",
     "rollup-plugin-delete": "^2.0.0",
-    "typescript": "^4.3.2"
+    "typescript": "^4.3.2",
+    "yargs": "^17.0.1"
   },
   "peerDependencies": {
     "jest": "^27.0.4",

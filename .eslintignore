@@ -1,3 +1,4 @@
 *.config.js
 .*rc.js
 examples/src/**/*
+scripts/**/*
