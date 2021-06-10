@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Emoji } from '../models/Emojis'
 import * as Emojis from '../models/Emojis'
 import defaultEmojiSet from '../emojis.json'
@@ -26,12 +26,21 @@ const EmojiCha = ({
     setRoster(Emojis.shuffledCopy(emojis))
   }, [drawCount, emojis, roster])
 
+  useEffect(() => {
+    setRoster(Emojis.shuffledCopy(emojis))
+  }, [emojis])
+
   return (
     <div className="emojicha-box">
       <button type="button" onClick={() => refresh()}>
         Refresh
       </button>
-      {emojiSelection && <EmojiSelect emojis={emojiSelection} />}
+      {emojiSelection && (
+        <EmojiSelect
+          key={emojiSelection.map((v) => v.char).join('')}
+          emojis={emojiSelection}
+        />
+      )}
     </div>
   )
 }
