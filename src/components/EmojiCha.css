@@ -14,9 +14,25 @@
 
 .emojiselect-items {
   display: flex;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .emojiselect-item {
   margin: 0 10px;
+  background: white;
+  outline: none;
+  border: 2px solid lightgray;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.emojiselect-item:hover {
+  background: rgb(231, 231, 231);
+}
+
+.emojiselect-item.emojiselect-item-selected {
+  background: rgb(231, 231, 231);
+  border: 2px solid gray;
 }
