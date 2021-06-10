@@ -1,6 +1,6 @@
 {
   "name": "emojicha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CAPTCHA made with Emoji",
   "main": "index.ts",
   "author": "Pakanon Pantisawat <pakanon.pantisawat@gmail.com>",
@@ -9,10 +9,10 @@
   "scripts": {
     "build": "rollup -c",
     "run:watch": "rollup -c -w",
-    "run:playground": "cd playground && yarn build && yarn serve",
-    "install:playground": "cd playground && yarn",
-    "install:all": "yarn && yarn install:playground",
-    "run": "npm-run-all build:watch build:playground"
+    "run:examples": "cd examples && yarn build && yarn serve",
+    "install:examples": "cd examples && yarn",
+    "install:all": "yarn && yarn install:examples",
+    "start": "npm-run-all --parallel run:watch run:examples"
   },
   "dependencies": {
     "jest": "^27.0.4",
