@@ -9,7 +9,7 @@
   "scripts": {
     "build": "rollup -c",
     "run:watch": "rollup -c -w",
-    "run:examples": "cd examples && yarn build && yarn serve",
+    "run:examples": "cd examples && yarn dev",
     "install:examples": "cd examples && yarn",
     "install:all": "yarn && yarn install:examples",
     "start": "npm-run-all --parallel run:watch run:examples"

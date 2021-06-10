@@ -1,7 +1,10 @@
 import React from 'react'
+import Box from 'emojicha/dist'
 
 export const App = () => (
   <div>
-    <h1>Hi</h1>
+    <Box>
+      <h1>Hello</h1>
+    </Box>
   </div>
 )

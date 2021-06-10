@@ -1,23 +1,25 @@
 import RollupPluginDelete from 'rollup-plugin-delete'
 import RollupPluginTypescript from '@rollup/plugin-typescript'
-import Package from './package.json';
 
 export default [
   {
     input: 'src/index.ts',
     output: [
       {
-        dir: 'dist',
-        // file: 'dist/index.cjs.js',
+        file: 'dist/index.cjs.js',
         format: 'cjs',
         exports: 'auto',
       },
       {
-        dir: 'dist',
-        // file: 'dist/index.esm.js',
+        file: 'dist/index.esm.js',
         format: 'esm',
         exports: 'auto',
       },
+      {
+        dir: 'dist',
+        format: 'esm',
+        exports: 'auto'
+      }
     ],
     plugins: [
       RollupPluginDelete({
@@ -25,6 +27,5 @@ export default [
       }),
       RollupPluginTypescript()
     ],
-    external: Object.keys(Package.peerDependencies || {})
   }
 ];
