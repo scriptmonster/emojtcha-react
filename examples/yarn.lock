@@ -1061,9 +1061,9 @@ emoji-regex@^8.0.0:
   integrity sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==
 
 emojicha@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/emojicha/-/emojicha-1.0.1.tgz#1b10fc47b6fc3626062c1bd2a66a31b058ad3a42"
-  integrity sha512-Ms2WqcWkc4ZAzy5feP9BNgZK5s2yurrk27iBI/d0xBNSmGxV4OA8YdaUQeqyV1/eqp2qN9hhiKCQCS41X/nkHA==
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/emojicha/-/emojicha-1.0.9.tgz#97b665a4e7e4b6247de98932e817812a9fe515bd"
+  integrity sha512-UNV660elJgI/2Frog0rcehLKuMlfv/ggWAoMiS5G3ikoFpBAnxFMUTqKpOe5NBry28WbYl1cF7LPFtpeTdEKXA==
   dependencies:
     jest "^27.0.4"
     react "^16.10.2"

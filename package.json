@@ -1,6 +1,6 @@
 {
   "name": "emojicha",
-  "version": "1.0.5",
+  "version": "1.0.9",
   "description": "CAPTCHA made with Emoji",
   "main": "index.ts",
   "author": "Pakanon Pantisawat <pakanon.pantisawat@gmail.com>",

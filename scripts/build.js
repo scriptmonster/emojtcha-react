@@ -99,6 +99,7 @@ function publish() {
   fs.copyFileSync('package.json', 'tmp/package.json')
   console.info('Start publishing')
   console.time('Finished publising in')
+  // process.exit(0)
   childProcess.execSync('cd tmp && yarn publish')
   console.timeEnd('Finished publising in')
   console.info('Removing temporary directory')
