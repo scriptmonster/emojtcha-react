@@ -1,6 +1,7 @@
 import RollupPluginDelete from 'rollup-plugin-delete'
 import RollupPluginTypescript from '@rollup/plugin-typescript'
 import RollupPluginStyles from 'rollup-plugin-styles'
+import RollupPluginJson from '@rollup/plugin-json'
 
 export default [
   {
@@ -27,7 +28,8 @@ export default [
         targets: 'dist/*'
       }),
       RollupPluginTypescript(),
-      RollupPluginStyles()
+      RollupPluginStyles(),
+      RollupPluginJson()
     ],
   }
 ];

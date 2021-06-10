@@ -1,3 +1,1 @@
-import './index.css'
-
-export { default } from './components/Box'
+export { default } from './components/EmojiCha'
