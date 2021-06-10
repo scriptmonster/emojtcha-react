@@ -1,5 +1,5 @@
 import React from 'react'
-import Box from 'emojicha/dist'
+import Box from 'emojicha'
 
 export const App = () => (
   <div>
