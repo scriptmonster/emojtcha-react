@@ -1,5 +1,6 @@
 import RollupPluginDelete from 'rollup-plugin-delete'
 import RollupPluginTypescript from '@rollup/plugin-typescript'
+import RollupPluginStyles from 'rollup-plugin-styles'
 
 export default [
   {
@@ -25,7 +26,8 @@ export default [
       RollupPluginDelete({
         targets: 'dist/*'
       }),
-      RollupPluginTypescript()
+      RollupPluginTypescript(),
+      RollupPluginStyles()
     ],
   }
 ];
