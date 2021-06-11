@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { getOrElse } from '../../helpers/Functions'
+import { ItemOption, NameOption } from '../../models/EmojiSelectOption'
 
 export const Title = styled.p`
   background: white;
@@ -9,8 +11,13 @@ export const Title = styled.p`
   text-align: center;
 `
 
+interface NameProps {
+  readonly nameOption: NameOption
+}
+
 export const Name = styled.span`
-  color: red;
+  color: ${({ nameOption }: NameProps) =>
+    nameOption.nameHighlight && getOrElse(nameOption.nameColor, 'red')};
 `
 
 export const Container = styled.div`
@@ -29,20 +36,31 @@ export const Items = styled.div`
 
 interface ItemButtonProps {
   readonly isSelected: boolean
+  readonly itemOption: ItemOption
 }
 
 export const Item = styled.button<ItemButtonProps>`
   background: ${(props: ItemButtonProps) =>
-    props.isSelected ? 'rgb(231, 231, 231)' : 'white'};
+    props.isSelected
+      ? `${getOrElse(
+          props.itemOption.selectedBackgroundColor,
+          'rgb(231, 231, 231)',
+        )}!important`
+      : 'white'};
   outline: none;
   border: 2px solid
-    ${(props: ItemButtonProps) => (props.isSelected ? 'gray' : 'white')};
+    ${(props: ItemButtonProps) =>
+      props.isSelected
+        ? getOrElse(props.itemOption.selectedBorderColor, 'gray')
+        : 'white'};
   padding: 5px;
   border-radius: 10px;
   text-align: center;
   vertical-align: middle;
 
   &:hover {
-    background: rgb(231, 231, 231);
-  }
+    background: ${({ itemOption }: ItemButtonProps) =>
+      getOrElse(itemOption.hoverBackgroundColor, 'rgb(231, 231, 231)')};
+    border: '2px solid ${({ itemOption }: ItemButtonProps) =>
+      getOrElse(itemOption.hoverBorderColor, 'lightgray')}';
 `

@@ -1,18 +1,26 @@
 import React, { useState } from 'react'
+import { getOrEmpty } from '../../helpers/Functions'
 import { formattedMessedUp } from '../../helpers/String'
 import { Emoji, takeRandom } from '../../models/Emojis'
+import {
+  EmojiSelectOption,
+  ItemOption,
+  NameOption,
+} from '../../models/EmojiSelectOption'
 import { Container, Item, Items, Name, Title } from './styled'
 
 interface DataProps {
   emojis: Emoji[]
+  emojiSelectOption?: EmojiSelectOption
 }
 
-const EmojiSelect = ({ emojis }: DataProps): JSX.Element => {
+const EmojiSelect = ({ emojis, emojiSelectOption }: DataProps): JSX.Element => {
   const [correctEmoji] = useState<Emoji>(takeRandom(emojis))
   const [selectedIndex, setSelectedIndex] = useState<number>(-1)
   const mappedElement = emojis.map((emoji, index) => (
     <Item
       isSelected={selectedIndex === index}
+      itemOption={getOrEmpty<ItemOption>(emojiSelectOption?.item)}
       onClick={() => setSelectedIndex(index)}
       key={emoji.char}
     >
@@ -22,7 +30,10 @@ const EmojiSelect = ({ emojis }: DataProps): JSX.Element => {
   return (
     <Container>
       <Title>
-        Please select <Name>{formattedMessedUp(correctEmoji.name)}</Name>
+        Please select{' '}
+        <Name nameOption={getOrEmpty<NameOption>(emojiSelectOption?.name)}>
+          {formattedMessedUp(correctEmoji.name)}
+        </Name>
       </Title>
       <Items>{mappedElement}</Items>
     </Container>
