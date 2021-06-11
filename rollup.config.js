@@ -2,6 +2,8 @@ import RollupPluginDelete from 'rollup-plugin-delete'
 import RollupPluginTypescript from '@rollup/plugin-typescript'
 import RollupPluginStyles from 'rollup-plugin-styles'
 import RollupPluginJson from '@rollup/plugin-json'
+import RollupPluginExternal from 'rollup-plugin-peer-deps-external'
+import packageJson from './package.json'
 
 export default [
   {
@@ -31,5 +33,9 @@ export default [
       RollupPluginStyles(),
       RollupPluginJson()
     ],
+    external: (() => {
+      console.log(packageJson.peerDependencies)
+      return Object.keys(packageJson.peerDependencies || {})
+    })()
   }
 ];
