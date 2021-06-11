@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { messup } from '../../helpers/String'
+import { formattedMessedUp } from '../../helpers/String'
 import { Emoji, takeRandom } from '../../models/Emojis'
 import { Container, Item, Items, Name, Title } from './styled'
 
@@ -22,7 +22,7 @@ const EmojiSelect = ({ emojis }: DataProps): JSX.Element => {
   return (
     <Container>
       <Title>
-        Please select <Name>{messup(correctEmoji.name)}</Name>
+        Please select <Name>{formattedMessedUp(correctEmoji.name)}</Name>
       </Title>
       <Items>{mappedElement}</Items>
     </Container>
