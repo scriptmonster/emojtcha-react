@@ -12,11 +12,18 @@ interface DataProps {
   emojiSelectOption?: EmojiSelectOption
 }
 
+interface ActionProps {
+  onSelect: (isCorrect: boolean) => void
+}
+
+type Props = DataProps & ActionProps
+
 const EmojiCha = ({
   emojiSet = defaultEmojiSet,
   drawCount = 6,
   emojiSelectOption,
-}: DataProps): JSX.Element => {
+  onSelect,
+}: Props): JSX.Element => {
   const [emojis] = useState<Emoji[]>(emojiSet)
   const [roster, setRoster] = useState<Emoji[]>(Emojis.shuffledCopy(emojis))
   const [emojiSelection] = useState<Emoji[]>(Emojis.takeFor(roster, drawCount))
@@ -31,6 +38,7 @@ const EmojiCha = ({
         key={emojiSelection.map((v) => v.char).join('')}
         emojis={emojiSelection}
         emojiSelectOption={emojiSelectOption}
+        onSelect={onSelect}
       />
     </Box>
   )
