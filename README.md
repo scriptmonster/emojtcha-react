@@ -34,7 +34,7 @@
     CAPTCHA made with Emoji you loved
     <br />
     <br />
-    <a href="https://github.com/pknn/emojtcha-react">View Demo</a>
+    <a href="https://codesandbox.io/s/musing-banach-nw118?file=/src/App.js">View Demo</a>
     ·
     <a href="https://github.com/pknn/emojtcha-react/issues">Report Bug</a>
     ·
