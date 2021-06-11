@@ -76,10 +76,10 @@ function writeUpdatedVersion(updatedVersion) {
   fs.writeFileSync('package.json', packageJsonString)
 }
 
-function update() {
+function update(currentVersion) {
+  console.log('================= VERSIONING =================')
   console.info('Starting versioning process')
   const option = getOption(argv)
-  const currentVersion = getCurrentVersion()
   console.info(`Current Version: ${getVersionString(currentVersion)}`)
   const updatedVersion = getUpdatedVersion(currentVersion, option)
   console.info(`${option.toUpperCase()} update -> ${getVersionString(updatedVersion)}`)
@@ -92,15 +92,29 @@ function update() {
   }
 }
 
+function rollback(currentVersion) {
+  console.log('================= ROLLBACK =================')
+  console.info('Starting versioning rollback')
+  console.info(`Rollback to: ${getVersionString(currentVersion)}`)
+  writeUpdatedVersion(currentVersion)
+  console.info('The rollbacked version was written to package.json')
+  console.info('Finished versioning rollback')
+}
+
 function publish() {
+  console.log('================= PUBLISH =================')
   console.info('Starting publication process')
   console.info('Writing temporary directory for publication')
   fs.copySync('dist', 'tmp')
   fs.copyFileSync('package.json', 'tmp/package.json')
   console.info('Start publishing')
   console.time('Finished publising in')
-  // process.exit(0)
-  childProcess.execSync('cd tmp && yarn publish')
+  try {
+    childProcess.execSync('cd tmp && yarn publish')
+  } catch (error) {
+    console.error(error)
+    return false
+  }
   console.timeEnd('Finished publising in')
   console.info('Removing temporary directory')
   fs.rmSync('tmp', {
@@ -108,6 +122,7 @@ function publish() {
     force: true
   })
   console.info('Finished publication process')
+  return true
 }
 
 function getOption(argv) {
@@ -118,8 +133,11 @@ function getOption(argv) {
 }
 
 function main() {
-  update()
-  publish()
+  const currentVersion = getCurrentVersion()
+  update(currentVersion)
+  if (!publish()) {
+    rollback(currentVersion)
+  }
 }
 
 main()

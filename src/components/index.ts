@@ -1,1 +1,1 @@
-export { default } from './EmojiCha'
+export { default } from './EmojtCha'

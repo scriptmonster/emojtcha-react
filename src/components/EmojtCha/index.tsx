@@ -3,7 +3,7 @@ import { Box } from './styled'
 import { Emoji } from '../../models/Emojis'
 import * as Emojis from '../../models/Emojis'
 import defaultEmojiSet from '../../emojis.json'
-import EmojiSelect from '../EmojiChaSelect'
+import EmojiSelect from '../EmojiSelect'
 import { EmojiSelectOption } from '../../models/EmojiSelectOption'
 
 interface DataProps {
@@ -18,7 +18,7 @@ interface ActionProps {
 
 type Props = DataProps & ActionProps
 
-const EmojiCha = ({
+const EmojtCha = ({
   emojiSet = defaultEmojiSet,
   drawCount = 6,
   emojiSelectOption,
@@ -44,4 +44,4 @@ const EmojiCha = ({
   )
 }
 
-export default EmojiCha
+export default EmojtCha
