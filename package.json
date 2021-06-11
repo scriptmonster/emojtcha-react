@@ -1,8 +1,8 @@
 {
   "name": "emojtcha-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CAPTCHA made with Emoji",
-  "main": "index.ts",
+  "main": "index.js",
   "author": "Pakanon Pantisawat <pakanon.pantisawat@gmail.com>",
   "license": "MIT",
   "private": false,
