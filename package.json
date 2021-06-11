@@ -1,6 +1,6 @@
 {
-  "name": "emojtcha",
-  "version": "0.0.0",
+  "name": "emojtcha-react",
+  "version": "1.0.0",
   "description": "CAPTCHA made with Emoji",
   "main": "index.ts",
   "author": "Pakanon Pantisawat <pakanon.pantisawat@gmail.com>",
