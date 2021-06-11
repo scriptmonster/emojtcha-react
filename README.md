@@ -14,6 +14,7 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
+[![NPM][npm-shield]][npm-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -208,6 +209,8 @@ Project Link: [https://github.com/pknn/emojtcha-react](https://github.com/pknn/e
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
+[npm-shield]: https://img.shields.io/npm/v/emojtcha-react?style=flat-square
+[npm-url]: https://www.npmjs.com/package/emojtcha-react
 [contributors-shield]: https://img.shields.io/github/contributors/pknn/emojtcha?style=flat-square
 [contributors-url]: https://github.com/pknn/emojtcha-react/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/pknn/emojtcha-react?style=flat-square
