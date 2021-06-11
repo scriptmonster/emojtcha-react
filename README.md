@@ -25,6 +25,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
+    <a href="https://github.com/pknn/emojtcha-react">
+      <img src="screenshot.png" alt="Logo">
+    </a>
   <h3 align="center">Emojtcha React</h3>
 
   <p align="center">
