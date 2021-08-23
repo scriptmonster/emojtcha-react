@@ -47,7 +47,7 @@ const EmojiSelect = ({
   return (
     <Container>
       <Title>
-        Please select{' '}
+        Lütfen aşağıdan seçiniz: {' '}
         <Name nameOption={getOrEmpty<NameOption>(emojiSelectOption?.name)}>
           {formattedMessedUp(correctEmoji.name)}
         </Name>

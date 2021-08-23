@@ -12,7 +12,7 @@ const messup = (str: string): string =>
 const toCapitalCase = (str: string): string =>
   str
     .split('')
-    .map((c: string, index: number) => (index === 0 ? c.toUpperCase() : c))
+    .map((c: string, index: number) => (index === 0 ? c.toLocaleUpperCase('tr-TR') : c))
     .join('')
 
 const encloseWith = (encloser: string) => (str: string) =>
