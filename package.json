@@ -1,5 +1,5 @@
 {
-  "name": "emojtcha-react",
+  "name": "@scriptmonster/emojtcha-react",
   "version": "1.0.6",
   "description": "CAPTCHA made with Emoji",
   "main": "index.js",
